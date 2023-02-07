@@ -3,11 +3,13 @@ import Sidebar from "./SideBar";
 import Footer from "./Footer";
 function DefaultLayout({children}) {
     return ( 
-        <div>
+        <div className="flex flex-col">
             <Header />
-            <div className="container">
+            <div className="container flex">
+                <div>
                 <Sidebar />
-                <div className="content">{children}</div>
+                </div>                
+                <div className="content flex-1">{children}</div>
             </div>
             <div className="footer">
                 <Footer />
