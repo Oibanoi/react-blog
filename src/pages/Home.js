@@ -1,4 +1,4 @@
-import { getPosts } from '../graphql/queries'
+import { getPosts } from './graphql/queries'
 import { useState, useEffect } from 'react';
 
 function Home() {
