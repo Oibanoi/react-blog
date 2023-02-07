@@ -1,9 +1,9 @@
 import React from 'react'
 
-import {ReactComponent as GitHubSVG} from '../svg/github.svg'
-import {ReactComponent as LinkedInSVG} from '../svg/linkedin.svg'
-import {ReactComponent as SlackSVG} from '../svg/slack.svg'
-import {ReactComponent as TwitterSVG} from '../svg/twitter.svg'
+import {ReactComponent as GitHubSVG} from './svg/github.svg'
+import {ReactComponent as LinkedInSVG} from './svg/linkedin.svg'
+import {ReactComponent as SlackSVG} from './svg/slack.svg'
+import {ReactComponent as TwitterSVG} from './svg/twitter.svg'
 
 const socialLinks = [
   {
