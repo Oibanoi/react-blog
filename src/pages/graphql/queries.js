@@ -22,18 +22,22 @@ export const getPages = async () => {
 export const getPosts = async () => {
     const query =gql`
         query GetPosts {
-            posts {
-                tags
-                author {
-                  name
-                }
-                content {
-                  html
-                }
-                date
-                id
-                title
-              }
+          posts(orderBy: publishedAt_DESC) {
+            tags
+            author {
+              name
+            }
+            content {
+              html
+            }
+            date
+            id
+            title
+            coverImage {
+              url
+            }
+            slug
+          }
         }
     `
 
