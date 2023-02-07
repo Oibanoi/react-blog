@@ -15,7 +15,7 @@ function Header() {
     <nav>
       {
         pages.map(page =>(
-          <a key={page.slug} className="px-4 py-2 text-base font-medium hover:bg-gray-800 rounded" href="#">{page.title}</a>
+          <a key={page.slug} className="px-4 py-2 text-base font-medium hover:bg-gray-800 rounded" href={`/${page.slug}` }>{page.title}</a>
         ))
       }
     </nav>

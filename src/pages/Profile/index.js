@@ -1,5 +1,5 @@
-function Profile() {
-    return <h2>Profile Page</h2>;
+function Contact() {
+    return <h2>Contact Page</h2>;
 }
 
-export default Profile;
+export default Contact;
