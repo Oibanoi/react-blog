@@ -45,3 +45,30 @@ export const getPosts = async () => {
 
     return result.posts;
 }
+
+
+
+export const getOnePost = async (slug) => {
+  const query =gql`
+      query GetOnePost($slug: String!) {
+        post(where: {slug: $slug }) {
+          author {
+            name
+          }
+          content {
+            html
+          }
+          coverImage {
+            url
+          }
+          slug
+          tags
+          title
+        }
+      }
+  `
+
+  const result = await request(graphcmc, query,{slug});
+
+  return result.post;
+}

@@ -1,4 +1,4 @@
-import { getPosts } from './graphql/queries'
+import { getPosts } from '../graphql/queries'
 import { useState, useEffect } from 'react';
 
 function Home() {
@@ -21,7 +21,7 @@ function Home() {
           <img className="w-full h-64 object-cover" src={post.coverImage.url} alt="Post 1 Cover Image"/>
           <h4 className="text-xl font-bold mt-4">{post.title}</h4>
           <p className="text-gray-700">{post.author.name}</p>
-          <a className="text-indigo-500 hover:text-indigo-700 mt-4" href="#">Read More</a>
+          <a className="text-indigo-500 hover:text-indigo-700 mt-4" href={`/post/${post.slug}`}>Read More</a>
         </div>
           ))
         }             

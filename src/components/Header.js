@@ -1,4 +1,4 @@
-import { getPages } from '../pages/graphql/queries'
+import { getPages } from '../graphql/queries'
 import { useState, useEffect } from 'react';
 
 function Header() {
