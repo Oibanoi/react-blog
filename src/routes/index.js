@@ -1,4 +1,4 @@
-import { HeaderOnly } from '../components/Layout';
+import { HeaderOnly } from '../components';
 
 // Pages
 import Home from '../pages/Home';

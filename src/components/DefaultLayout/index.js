@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Sidebar from "./SideBar";
-
+import Footer from "./Footer";
 function DefaultLayout({children}) {
     return ( 
         <div>
@@ -8,6 +8,9 @@ function DefaultLayout({children}) {
             <div className="container">
                 <Sidebar />
                 <div className="content">{children}</div>
+            </div>
+            <div className="footer">
+                <Footer />
             </div>
         </div>
      );
