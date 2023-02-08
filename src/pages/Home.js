@@ -18,7 +18,7 @@ function Home() {
         {
           posts.map(post =>(
           <div className="w-full p-4 bg-white shadow-md" key={post.id}>
-          <img className="w-full h-64 object-cover" src={post.coverImage.url} alt="Post 1 Cover Image"/>
+          <img className="w-full h-64 object-cover" src={post.coverImage.url} alt="Post 1 Cover"/>
           <h4 className="text-xl font-bold mt-4">{post.title}</h4>
           <p className="text-gray-700">{post.author.name}</p>
           <a className="text-indigo-500 hover:text-indigo-700 mt-4" href={`/post/${post.slug}`}>Read More</a>

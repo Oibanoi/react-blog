@@ -4,13 +4,13 @@ function Sidebar() {
       <h3 className="font-bold mb-4">Navigation</h3>
       <ul className="list-reset">
         <li className="mb-2">
-          <a className="text-white hover:text-gray-400" href="#">Home</a>
+          <a className="text-white hover:text-gray-400" href="/home">Home</a>
         </li>
         <li className="mb-2">
-          <a className="text-white hover:text-gray-400" href="#">About</a>
+          <a className="text-white hover:text-gray-400" href="/about">About</a>
         </li>
         <li className="mb-2">
-          <a className="text-white hover:text-gray-400" href="#">Contact</a>
+          <a className="text-white hover:text-gray-400" href="/contact">Contact</a>
         </li>
       </ul>
     </nav>
