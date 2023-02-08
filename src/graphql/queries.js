@@ -17,7 +17,20 @@ export const getPages = async () => {
     return result.pages;
 }
 
+export const getTags = async () => {
+  const query =gql`
+      query GetTags {
+        tags {
+          name
+          slug
+        }
+      }
+  `
 
+  const result = await request(graphcmc, query);
+
+  return result.tags;
+}
 
 export const getPosts = async () => {
     const query =gql`
@@ -71,4 +84,32 @@ export const getOnePost = async (slug) => {
   const result = await request(graphcmc, query,{slug});
 
   return result.post;
+}
+
+export const getPostsByTag = async (slug) => {
+  const query =gql`
+      query getPostsByTag($slug: String!) {
+        posts(orderBy: publishedAt_DESC
+          where: {categories_some: {slug_contains: $slug}}) {
+          tags
+          author {
+            name
+          }
+          content {
+            html
+          }
+          date
+          id
+          title
+          coverImage {
+            url
+          }
+          slug
+        }
+      }
+  `
+
+  const result = await request(graphcmc, query,{slug});
+
+  return result.posts;
 }

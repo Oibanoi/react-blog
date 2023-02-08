@@ -6,12 +6,14 @@ import Following from '../pages/Following';
 import Detail from '../pages/Detail';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import PostsByTag from '../pages/PostsByTag';
 // Public routes
 const publicRoutes = [
     { path: '/', component: Home },
     { path: '/home', component: Home },
     { path: '/following', component: Following },
     { path: '/detail/:slug', component: Detail },
+    { path: '/tag/:slug', component: PostsByTag },
     { path: '/about', component: About },
     { path: '/contact', component: Contact }
 ];
