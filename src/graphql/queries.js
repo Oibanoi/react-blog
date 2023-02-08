@@ -113,3 +113,31 @@ export const getPostsByTag = async (slug) => {
 
   return result.posts;
 }
+
+
+export const getPostsBySearch = async (slug) => {
+  const query =gql`
+      query getPostsByTag($slug: String!) {
+        posts(orderBy: publishedAt_DESC, where: {_search: $slug}) {
+          tags
+          author {
+            name
+          }
+          content {
+            html
+          }
+          date
+          id
+          title
+          coverImage {
+            url
+          }
+          slug
+        }
+      }
+  `
+
+  const result = await request(graphcmc, query,{slug});
+
+  return result.posts;
+}
