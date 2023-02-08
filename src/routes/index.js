@@ -11,7 +11,7 @@ const publicRoutes = [
     { path: '/', component: Home },
     { path: '/home', component: Home },
     { path: '/following', component: Following },
-    { path: '/post/:slug', component: Detail },
+    { path: '/detail/:slug', component: Detail },
     { path: '/about', component: About },
     { path: '/contact', component: Contact }
 ];
