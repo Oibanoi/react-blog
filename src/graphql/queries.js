@@ -31,10 +31,24 @@ export const getTags = async () => {
 
   return result.tags;
 }
+export const getTotalPaging = async () => {
+  const query =gql`
+      query getTotalPaging {
+        postsConnection {
+          aggregate {
+            count
+          }
+        }
+      }
+  `
 
+  const result = await request(graphcmc, query);
+
+  return result.postsConnection.aggregate.count;
+}
 export const getPosts = async () => {
     const query =gql`
-        query GetPosts {
+        query GetPosts( ) {
           posts(orderBy: publishedAt_DESC) {
             tags
             author {
@@ -64,7 +78,7 @@ export const getPosts = async () => {
 export const getOnePost = async (slug) => {
   const query =gql`
       query GetOnePost($slug: String!) {
-        post(where: {slug: $slug }) {
+        posts(where: {slug: $slug }) {
           author {
             name
           }
@@ -83,7 +97,7 @@ export const getOnePost = async (slug) => {
 
   const result = await request(graphcmc, query,{slug});
 
-  return result.post;
+  return result.posts;
 }
 
 export const getPostsByTag = async (slug) => {

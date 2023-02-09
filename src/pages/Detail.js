@@ -1,21 +1,20 @@
 import { getOnePost } from '../graphql/queries';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import React from 'react';
 import Post from '../components/Post';
+import useQueryPost from '../hook/useQueryPost';
+import Error from './Error';
 function Home() {
-    const { slug } = useParams();
-    const [posts, setPosts] = useState();
-    useEffect(() => {
-        getOnePost(slug ).then((newPost) => setPosts(newPost));
-    }, [slug]);
-    if (posts)
-    return (
-        <React.Fragment key={posts.slug}>
-            
-                    <Post post={posts} />
-        </React.Fragment>
-    );
+    const { posts, error } = useQueryPost({ func: getOnePost });
+    console.log(posts);
+    if (error)
+   return( <Error/>)
+        return (
+            <div>
+                {
+                    posts.map(post => (<Post key={post.slug} post={post} />))
+                }
+            </div>
+        );
 }
 
 export default Home;
