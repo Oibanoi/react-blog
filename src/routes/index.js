@@ -8,6 +8,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import PostsByTag from '../pages/PostsByTag';
 import PostsBySearch from '../pages/PostsBySearch';
+import TimeLine from '../pages/TimeLine';
 // Public routes
 const publicRoutes = [
     { path: '/', component: Home },
@@ -17,7 +18,8 @@ const publicRoutes = [
     { path: '/tag/:slug', component: PostsByTag },
     { path: '/search/:slug', component: PostsBySearch },
     { path: '/about', component: About },
-    { path: '/contact', component: Contact }
+    { path: '/contact', component: Contact },
+    { path: '/timeline', component: TimeLine }
 ];
 
 const privateRoutes = [];

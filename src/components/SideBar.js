@@ -6,7 +6,8 @@ function Sidebar() {
 
     useEffect(() => {
         getTags().then((newTags) => setTags(newTags));
-    }, []);
+        console.log(Tags);
+    },[]);
 
     return (
         <aside className="bg-gray-800 w-64 p-4 h-full">
