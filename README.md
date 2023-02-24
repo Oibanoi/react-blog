@@ -1,6 +1,7 @@
 # React Blog
 Blog using ReactJS for frontend and HyGraph for database, using graphql for query
 
+![Blog](public/img.jpg)
 ## Installation
 
 Use the package manager [npm](https://www.npmjs.com/)  to install App
