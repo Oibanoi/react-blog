@@ -11,6 +11,7 @@ function Search() {
         let value=search.trim().replace(/\s+/g,'-').toLocaleLowerCase();
         navigate(`/search/${value}`);
     }
+    console.log(search);
     return (
        
                     <form className="flex items-center" onSubmit={handleSearch}>

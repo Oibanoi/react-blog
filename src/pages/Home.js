@@ -2,6 +2,7 @@ import { getPosts } from '../graphql/queries'
 import React, { useState } from 'react'
 import useQueryPost from '../hook/useQueryPost'
 import Error from './Error';
+import { Trans, useTranslation } from 'react-i18next';
 import ReactPaginate from 'react-paginate';
 function Home() {
   const {posts, error,totalPage}= useQueryPost({func: getPosts})
@@ -15,7 +16,7 @@ function Home() {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
+  const { t } = useTranslation()
   const paginate = ({ selected }) => {
      setCurrentPage(selected + 1);
   };
@@ -24,10 +25,10 @@ function Home() {
     console.log(error)
     return( <Error/>)
   }
-   
+  console.log(currentPosts)
     return (
     <main className="container mx-auto p-4">
-    <h2 className="text-2xl font-bold mb-4">Welcome to My Blog</h2>
+    <h2 className="text-2xl font-bold mb-4">{t('content.welcome')}</h2>
     <p className="text-gray-700">Here you can find articles about various topics that interest me and hopefully you as well.</p>
     <section className="mt-8">
       <h3 className="text-xl font-bold mb-4">Recent Posts</h3>

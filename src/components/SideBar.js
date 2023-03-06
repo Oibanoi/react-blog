@@ -1,9 +1,10 @@
 import { getTags } from '../graphql/queries';
 import { useState, useEffect } from 'react';
 
+import { Trans, useTranslation } from 'react-i18next';
 function Sidebar() {
     const [Tags, setTags] = useState([]);
-
+    const { t } = useTranslation()
     useEffect(() => {
         getTags().then((newTags) => setTags(newTags));
         console.log(Tags);
@@ -12,7 +13,7 @@ function Sidebar() {
     return (
         <aside className="bg-gray-800 w-64 p-4 h-full">
             <nav className="text-white">
-                <h3 className="font-bold mb-4">Navigation</h3>
+                <h3 className="font-bold mb-4">{t('content.nav')}</h3>
                 <ul className="list-reset">
                     {Tags.map((tag) => (
                         <li className="mb-2" key={tag.slug}>
